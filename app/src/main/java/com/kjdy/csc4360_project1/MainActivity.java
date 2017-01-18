@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        initialView();
+//        initialView();
         //Toast.makeText(this, "Button was clicked", Toast.LENGTH_LONG).show();
 
         bt1.setOnClickListener(new View.OnClickListener(){
