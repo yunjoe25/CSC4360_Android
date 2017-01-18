@@ -8,8 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ImageButton bt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +31,25 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        initialView();
+        //Toast.makeText(this, "Button was clicked", Toast.LENGTH_LONG).show();
+
+        bt1.setOnClickListener(new View.OnClickListener(){
+          @Override
+          public void onClick(View v){
+              Toast.makeText(v.getContext(),"Button1 was clicked", Toast.LENGTH_LONG).show();
+          }
+        });
+    }
+
+    private void initialView() {
+        bt1 = (ImageButton) findViewById(R.id.bt1);
+
+
+    }
+    public void newMethod(View v){
+        Toast.makeText(this, "Button 2 was clicked", Toast.LENGTH_SHORT).show();
     }
 
     @Override
